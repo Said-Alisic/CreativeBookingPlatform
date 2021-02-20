@@ -4,13 +4,14 @@
   "description": "Backend server to connect with database and push data to frontend React application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./server.js --exec node_modules/.bin/babel-node -e js"
   },
   "author": "Said Alisic (SA)",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "mysql": "^2.18.1",
     "webpack": "^5.23.0",
     "webpack-cli": "^4.5.0"
   },
