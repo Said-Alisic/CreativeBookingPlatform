@@ -15,6 +15,8 @@ export const BookingSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-
-
+        booking_date: {
+            type: Date,
+            default: Date.now,
+        }
 });
