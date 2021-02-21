@@ -18,8 +18,12 @@ export const ClassSchema = new mongoose.Schema({
         type: Date,
         required: true,
     },
+    duration_minutes: {
+        type: int,
+        required: true,
+    },
     max_students: {
-        type: String,
+        type: Number,
         required: true,
     },
     
