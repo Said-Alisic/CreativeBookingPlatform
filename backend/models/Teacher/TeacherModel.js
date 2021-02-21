@@ -41,5 +41,9 @@ export const TeacherSchema = new mongoose.Schema({
     last_active: {
         type: Date,
         required: false,
+    },
+    access_level: {
+        type: String,
+        default: 'Teacher',
     }
 });
