@@ -5,16 +5,11 @@ import { TeacherSchema } from '../Teacher/TeacherModel';
 
 
 export const ClassSchema = new mongoose.Schema({
-    teacher_id: {
-        type: String,
-        ref: 'Teacher',
-        required: true,
-    },
     class_name: {
         type: String,
         required: true,
     },
-    date: {
+    start_date: {
         type: Date,
         required: true,
     },
@@ -25,6 +20,13 @@ export const ClassSchema = new mongoose.Schema({
     max_students: {
         type: Number,
         required: true,
+    },  
+    description: {
+        type: String,
+        required: true,
     },
-    
-})
+    status: {
+        type: String,
+        required: true,
+    },
+});

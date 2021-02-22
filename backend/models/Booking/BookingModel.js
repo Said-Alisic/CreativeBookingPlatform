@@ -4,11 +4,13 @@ import mongoose from 'mongoose';
 export const BookingSchema = new mongoose.Schema(
     { 
         student_id: {
-            type: Number,
+            type: String,
+            ref: 'Student',
             required: true,
         },
         class_id: {
-            type: Number,
+            type: String,
+            ref: 'Class',
             required: true,
         },
         status: {

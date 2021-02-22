@@ -30,7 +30,7 @@ export const TeacherSchema = new mongoose.Schema({
         type: String,
         default: true,
     }, 
-    teacher_background: {
+    teacher_info: {
         type: String,
         default: false,
     }, 

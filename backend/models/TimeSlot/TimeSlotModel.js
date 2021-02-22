@@ -8,10 +8,6 @@ export const TimeSlotSchema = new mongoose.Schema({
         ref: 'Class',
         required: true,
     },
-    class_name: {
-        type: String,
-        required: true,
-    },
     start_date: {
         type: Date,
         required: true,
@@ -20,5 +16,8 @@ export const TimeSlotSchema = new mongoose.Schema({
         type: Date,
         required: true,
     },
-    
-})
+    available: {
+        type: Boolean,
+        required: true,
+    },
+});

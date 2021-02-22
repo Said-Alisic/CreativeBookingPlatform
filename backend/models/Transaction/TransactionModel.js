@@ -23,4 +23,12 @@ export const TransactionSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
+    transaction_info: {
+        type: String,
+        required: true,
+    },
+    amount: {
+        type: Number,
+        required: true
+    },
 });
