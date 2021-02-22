@@ -1,10 +1,8 @@
-import { createHook } from 'async_hooks';
-import { createCipher } from 'crypto';
 import mongoose from 'mongoose';
-import { TeacherSchema } from '../Teacher/TeacherModel';
 
 
-export const ClassSchema = new mongoose.Schema({
+
+const ClassSchema = new mongoose.Schema({
     class_name: {
         type: String,
         required: true,
@@ -30,3 +28,5 @@ export const ClassSchema = new mongoose.Schema({
         required: true,
     },
 });
+
+export const Class = mongoose.model('Class', ClassSchema);

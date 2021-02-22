@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 
-export const TeacherSchema = new mongoose.Schema({
+const TeacherSchema = new mongoose.Schema({
     display_name: {
         type: String,
         required: true,
@@ -47,3 +47,5 @@ export const TeacherSchema = new mongoose.Schema({
         default: 'Teacher',
     }
 });
+
+export const Teacher = mongoose.model('Teacher', TeacherSchema);

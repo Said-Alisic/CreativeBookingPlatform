@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
 
-
-export const classTeacher = new mongoose.Schema(
+// Connects individual teachers to 
+// their respective hosted classes
+const ClassTeacherSchema = new mongoose.Schema(
     { 
         teacher_id: {
             type: String,
@@ -14,3 +15,5 @@ export const classTeacher = new mongoose.Schema(
             required: true,
         },
 });
+
+export const ClassTeacher = mongoose.model('ClassTeacher', ClassTeacherSchema);

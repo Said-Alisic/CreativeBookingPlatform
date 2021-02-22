@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
 
-
-export const BookingSchema = new mongoose.Schema(
+// Connects individual students to 
+// their respective booked classes
+const BookingSchema = new mongoose.Schema(
     { 
         student_id: {
             type: String,
@@ -22,3 +23,5 @@ export const BookingSchema = new mongoose.Schema(
             default: Date.now,
         }
 });
+
+export const Booking = mongoose.model('Booking', BookingSchema);

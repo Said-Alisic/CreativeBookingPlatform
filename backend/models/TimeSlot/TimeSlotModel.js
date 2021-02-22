@@ -1,8 +1,9 @@
 import mongoose from 'mongoose';
 
 
-// Should be created for each day and multiple ones on a single day
-export const TimeSlotSchema = new mongoose.Schema({
+// Should be created for each day within a certain 
+// period of days and multiple ones on a single day
+const TimeSlotSchema = new mongoose.Schema({
     class_id: {
         type: String,
         ref: 'Class',
@@ -21,3 +22,5 @@ export const TimeSlotSchema = new mongoose.Schema({
         required: true,
     },
 });
+
+export const TimeSlot = mongoose.model('TimeSlot', TimeSlotSchema);

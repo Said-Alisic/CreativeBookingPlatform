@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 // Used for ticket purchase transaction tracking
-export const TransactionSchema = new mongoose.Schema({
+const TransactionSchema = new mongoose.Schema({
     student_id: {
         type: String,
         ref: 'Student',
@@ -32,3 +32,5 @@ export const TransactionSchema = new mongoose.Schema({
         required: true
     },
 });
+
+export const Transaction = mongoose.model('Transaction', TransactionSchema);
