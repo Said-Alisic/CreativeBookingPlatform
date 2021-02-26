@@ -1,22 +1,32 @@
-import mongoose from 'mongoose';
+import mysql from 'mysql';
 
 
 const env = process.env;
 
 const db_host = 'localhost'
-const db = 'CreativeBookingsDB'
+const db = 'CreativeBookingDB'
+const db_user = 'testuser'
+const db_pass = 'testpass'
 
-mongoose.Promise = global.Promise;
-const dbconnection = mongoose.connect(`mongodb://${localhost}/${CreativeBookingsDB}`, {
-    useNewUrlParser: true, 
-    useUnifiedTopology: true
-});
 
+const connection = mysql.createConnection({
+  host: db_host,
+  user: db,
+  password: db_pass,
+  database: db
+})
+
+connection = (err) =>  {
+    connection.connect() 
+    if (err) throw err
+
+    console.log(`Successfully connected to database ${db}`)
+}
 
 // Exporting configurations for server
 export default {
     PORT: env.PORT || 4000,
-    dbconnection: connection,
+    db_connection: connection,
 };
 
 
