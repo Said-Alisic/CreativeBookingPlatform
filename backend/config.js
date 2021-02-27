@@ -1,5 +1,5 @@
 import mysql from 'mysql2';
-import Sequelize from 'sequelize';
+import { Sequelize } from 'sequelize';
 
 
 const env = process.env;
@@ -8,46 +8,26 @@ const db_host = 'localhost'
 const db = 'CreativeBookingDB'
 const db_user = 'testuser'
 const db_pass = 'testpass'
+const db_dialect = 'mysql'
 
-const connection = mysql.createConnection({
+// Sequelize database connection
+const sequelize = new Sequelize(db, db_user, db_pass, {
   host: db_host,
-  user: db_user,
-  password: db_pass,
-  database: db,
-})
-
-connection.connect( (err) => {
-    if (err) {
-      console.log(`Could not connect to database: ${db}`)
-      throw err
-    }
-      
-
-    console.log(`Successfully connected to database: ${db}`)
-});
-/**
-const sequelize = new Sequelize(connection.database, connection.USER, connection.PASSWORD, {
-  host: connection.HOST,
-  dialect: connection.dialect,
-  operatorsAliases: false,
-
+  dialect: db_dialect
 });
 
-const db = {};
-
-db.Sequelize = Sequelize;
-db.sequelize = sequelize;
-
-db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
-
-module.exports = db;
-**/
-
+sequelize.authenticate( (err) => {
+  if (err) {
+    console.log(`Could not connect to database: ${db}`)
+    throw err
+  }
+  console.log(`Successfully connected to database: ${db}`)
+});
 
 // Exporting configurations for server
 export default {
     PORT: env.PORT || 4000,
-    db_connection: connection,
+    db_connection: sequelize,
 };
 
 
