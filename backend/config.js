@@ -1,4 +1,5 @@
-import mysql from 'mysql';
+import mysql from 'mysql2';
+import Sequelize from 'sequelize';
 
 
 const env = process.env;
@@ -13,7 +14,6 @@ const connection = mysql.createConnection({
   user: db_user,
   password: db_pass,
   database: db,
-  insecureAuth : true
 })
 
 connection.connect( (err) => {
@@ -25,6 +25,24 @@ connection.connect( (err) => {
 
     console.log(`Successfully connected to database: ${db}`)
 });
+/**
+const sequelize = new Sequelize(connection.database, connection.USER, connection.PASSWORD, {
+  host: connection.HOST,
+  dialect: connection.dialect,
+  operatorsAliases: false,
+
+});
+
+const db = {};
+
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+
+db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
+
+module.exports = db;
+**/
+
 
 // Exporting configurations for server
 export default {
