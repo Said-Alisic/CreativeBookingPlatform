@@ -8,20 +8,19 @@ const db = 'CreativeBookingDB'
 const db_user = 'testuser'
 const db_pass = 'testpass'
 
-
 const connection = mysql.createConnection({
   host: db_host,
-  user: db,
+  user: db_user,
   password: db_pass,
-  database: db
+  database: db,
+  insecureAuth : true
 })
 
-connection = (err) =>  {
-    connection.connect() 
+connection.connect( (err) => {
     if (err) throw err
 
-    console.log(`Successfully connected to database ${db}`)
-}
+    console.log(`Successfully connected to database: ${db}`)
+});
 
 // Exporting configurations for server
 export default {
