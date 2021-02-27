@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import bodyparser from 'body-parser';
 import config from './config.js'
+import sequelize from './db_config.js'
+import StudentModel from './models/StudentModel';
 
 // Create server
 const server = express();
@@ -18,6 +20,7 @@ server.listen(config.PORT, () => {
 
 server.get('/', (req, res) => {
     res.send('Our API server is running.')
+    console.log(StudentModel === sequelize.models.StudentModel);
 
   })
 
