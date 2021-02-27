@@ -3,8 +3,11 @@ import mongoose from 'mongoose';
 
 const env = process.env;
 
+const db_host = 'localhost'
+const db = 'CreativeBookingsDB'
+
 mongoose.Promise = global.Promise;
-const connection = mongoose.connect('mongodb://localhost/CreativeBookingsDB', {
+const dbconnection = mongoose.connect(`mongodb://${localhost}/${CreativeBookingsDB}`, {
     useNewUrlParser: true, 
     useUnifiedTopology: true
 });
@@ -13,7 +16,7 @@ const connection = mongoose.connect('mongodb://localhost/CreativeBookingsDB', {
 // Exporting configurations for server
 export default {
     PORT: env.PORT || 4000,
-    database: connection,
+    dbconnection: connection,
 };
 
 
