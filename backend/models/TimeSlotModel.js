@@ -29,6 +29,7 @@ export const TimeSlotModel = sequelize.define('TimeSlot', {
             allowNull: false
         },
     }, {
-    tableName: 'timeSlots'
+    tableName: 'timeSlots',
+    timestamps: false
 });
 

@@ -41,6 +41,7 @@ export const StudentModel = sequelize.define('Student', {
             defaultValue: 'STUDENT',
         },
     }, {
-    tableName: 'students'
+    tableName: 'students',
+    timestamps: false
 });
 

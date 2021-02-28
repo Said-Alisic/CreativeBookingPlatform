@@ -14,4 +14,9 @@ export const getTeachers = (req, res) => {
         .then(teachers => res.json(teachers))
 }
 
+export const getTeacherById = (req, res) => {
+    Teacher.findByPk(req.params.TeacherId)
+        .then(teacher => res.json(teacher))
+}
+
 
