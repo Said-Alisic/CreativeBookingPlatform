@@ -5,18 +5,18 @@ const Teacher = sequelize.models.Teacher;
 
 export const addNewTeacher = (req, res) => {
     Teacher.create(req.body)
-        .then(teacher => res.json(teacher))
+        .then(data => res.json(data))
 
 }
 
 export const getTeachers = (req, res) => {
     Teacher.findAll()
-        .then(teachers => res.json(teachers))
+        .then(data => res.json(data))
 }
 
 export const getTeacherById = (req, res) => {
     Teacher.findByPk(req.params.TeacherId)
-        .then(teacher => res.json(teacher))
+        .then(data => res.json(data))
 }
 
 
