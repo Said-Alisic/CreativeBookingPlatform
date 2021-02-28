@@ -9,7 +9,7 @@ const server = express();
 
 // Allow cross-origin requests
 server.use(cors());
-server.use(bodyparser.urlencoded({ extended: true}));
+server.use(bodyparser.urlencoded({ extended: true }));
 server.use(bodyparser.json());
 
 // Start server

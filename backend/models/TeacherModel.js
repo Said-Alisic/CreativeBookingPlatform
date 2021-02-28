@@ -33,16 +33,12 @@ export const TeacherModel = sequelize.define('Teacher', {
         },  
         teacher_info: {
             type: STRING,
-            allowNull: false,
-            defaultValue: 0,
         },
         date_joined: {
             type: DATE,
-
         },
         last_active: {
             type: DATE,
-
         },
         access_level: {
             type: STRING,
@@ -50,7 +46,8 @@ export const TeacherModel = sequelize.define('Teacher', {
             defaultValue: 'TEACHER'
         },
     }, {
-    tableName: 'teachers'
+    tableName: 'teachers',
+    timestamps: false
 });
 
 

@@ -1,9 +1,17 @@
-import sequelize from '../db_config.js'
+import sequelize from '../db_config.js';
+import TeacherModel from '../models/TeacherModel.js';
 
 const Teacher = sequelize.models.Teacher;
 
 export const addNewTeacher = (req, res) => {
-    User.create(req.body)
-        .then(user => res.json(user))
+    Teacher.create(req.body)
+        .then(teacher => res.json(teacher))
 
 }
+
+export const getTeachers = (req, res) => {
+    Teacher.findAll()
+        .then(teachers => res.json(teachers))
+}
+
+
