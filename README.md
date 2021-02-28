@@ -1,4 +1,4 @@
-# Getting Started with the Ice Skating application
+# Getting Started with the Creative Booking application
 
 ## Prerequisities
 
