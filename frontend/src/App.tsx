@@ -1,16 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import './App.css';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-  
-      </header>
+      <h1>Hello React App</h1>
+      <Router>
+        <header className="App-header">
+          
+        </header>
+        <Link to="/teachers">Teachers</Link>
+        <Link to="/students">Students</Link>
+        <Link to="/classes">Classes</Link>
+      </Router>
     </div>
   );
-}
+};
 
-export default App;
+
 
