@@ -22,4 +22,4 @@
 ### Using the application
 
 1. Type `localhost:3000` in a browser of your choosing to access the application running of the frontend application did not auto-open it
-2. This is an ongoing personal-skills development project and is not yet finished; new features will be added regularly
+2. This is an ongoing personal-skills-development project and is not yet finished; new features will be added regularly
