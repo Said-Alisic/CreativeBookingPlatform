@@ -5,12 +5,13 @@ const db_host = 'localhost'
 const db = 'CreativeBookingDB'
 const db_user = 'testuser'
 const db_pass = 'testpass'
-const db_dialect = 'mysql'
+const db_dialect = 'mysql' // Which type of db to connect to
 
 // Sequelize database connection
 const sequelize = new Sequelize(db, db_user, db_pass, {
     host: db_host,
-    dialect: db_dialect
+    dialect: db_dialect,
+    logging: false
 });
 
 sequelize.authenticate( (err) => {

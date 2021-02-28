@@ -13,5 +13,6 @@ export const ClassTeacherModel = sequelize.define('ClassTeacher', {
             allowNull: false,
         },
     }, {
-    tableName: 'classTeachers'
+    tableName: 'classTeachers',
+    timestamps: false
 });

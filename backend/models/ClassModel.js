@@ -29,7 +29,8 @@ export const ClassModel = sequelize.define('Class', {
             defaultValue: 'ACTIVE'
         },
     }, {
-    tableName: 'classes'
+    tableName: 'classes',
+    timestamps: false
 });
 
 

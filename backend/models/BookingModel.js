@@ -24,6 +24,7 @@ export const BookingModel = sequelize.define('Booking', {
 
         },  
     }, {
-    tableName: 'bookings'
+    tableName: 'bookings',
+    timestamps: false
 });
 
