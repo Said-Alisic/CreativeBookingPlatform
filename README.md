@@ -7,6 +7,7 @@
 2. Node.js
 3. npm
 
+
 ## How to run the application
 
 ### Starting the API server
