@@ -1,32 +1,19 @@
-import React, { useState } from 'react';
-import { getTeachers } from '../../Api/teacherApi';
+import React from 'react';
+import { Teacher } from '../../Interfaces/TeacherInterface';
 
-/** 
-interface Teacher {
-    id: number,
-    display_name: string,
-    first_name: string,
-    last_name: string,
-    email: string,
-    password: string,
-    address: string,
-    phone_number: string,
-    teacher_inf: string,
-    date_joined: string,
-    last_active: string,
-    access_level: string
-}
-**/
- 
 
-export const TeacherList = () => {
 
+export const TeacherList = (props: Teacher[]): any => {
 
     return (
         <div>
-        
+            <ul>
+                {props.map((item) => {
+                    <li>{item.first_name}</li>
+                    })
+                }
+            </ul>
         </div>
-    )
-    
+    )  
 }
 
