@@ -15,8 +15,8 @@ export function TeacherList() {
     return (
         <Container>
             <ul>
-                {teachers.map(teacher => {
-                    return <li>{teacher.first_name}</li>
+                {teachers.map((teacher, index) => {
+                    return <li key={index} >{teacher.first_name}</li>
                 })}
             </ul>
         </Container>

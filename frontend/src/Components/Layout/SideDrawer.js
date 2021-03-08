@@ -6,17 +6,14 @@ import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { Switch, Route, Link, BrowserRouter } from "react-router-dom";
+import { Link, BrowserRouter } from "react-router-dom";
 import RouteSwitch  from './RouteSwitch';
 
 const drawerWidth = 240;
@@ -53,7 +50,9 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function ResponsiveDrawer(props) {
+
+
+function SideDrawer(props) {
   const { container } = props;
   const classes = useStyles();
   const theme = useTheme();
@@ -63,19 +62,27 @@ function ResponsiveDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const drawerOptions = [
+    'Classes', 
+    'Teachers', 
+    'Students', 
+    'Bookings', 
+    'My Profile', 
+    'My Classes', 
+    'My Bookings', 
+    'Tickets'];
+
   const drawer = (
     <div>
-      <div className={classes.toolbar} />
-      <Divider />
+
       <List>
-        {["Teachers", "Starred"].map((text, index) => (
+        {drawerOptions.map((text, index) => (
           <ListItem key={text} component={Link} to={"/" + text.toLowerCase()}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
+            <ListItemText key={text} primary={text} />
+            
+          </ListItem>     
         ))}
+        <Divider/>
       </List>
     </div>
   );
@@ -86,8 +93,6 @@ function ResponsiveDrawer(props) {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <IconButton
-            color="inherit"
-            aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
             className={classes.menuButton}
@@ -95,7 +100,7 @@ function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Responsive drawer
+            Responsive SideDrawer
           </Typography>
         </Toolbar>
       </AppBar>
@@ -143,7 +148,7 @@ function ResponsiveDrawer(props) {
   );
 }
 
-ResponsiveDrawer.propTypes = {
+SideDrawer.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
@@ -153,4 +158,4 @@ ResponsiveDrawer.propTypes = {
   )
 };
 
-export default ResponsiveDrawer;
+export default SideDrawer;

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import NavBar from './Components/Layout/NavBar';
-import ResponsiveDrawer from './Components/Layout/TestDrawer';
+import SideDrawer from './Components/Layout/SideDrawer';
 
 //<NavBar/>
 
@@ -10,7 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         
-        <ResponsiveDrawer/>
+        <SideDrawer/>
         
     </div>
     );

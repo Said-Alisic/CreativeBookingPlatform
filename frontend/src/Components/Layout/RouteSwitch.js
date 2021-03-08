@@ -7,13 +7,13 @@ function RouteSwitch() {
   return (
     <Switch>
       <Route exact path="/"/>
-      <Route path="/teachers" exact component={TeacherList} />
-      <Route path="/students" />
-      <Route path="/classes" />
-      <Route path="/bookings" />
-      <Route path="/mybookings" />
-      <Route path="/myclasses" />
-      <Route path="/myprofile" />
+      <Route path="/teachers" exact component={TeacherList}/>
+      <Route path="/students"/>
+      <Route path="/classes"/>
+      <Route path="/bookings"/>
+      <Route path="/mybookings"/>
+      <Route path="/myclasses"/>
+      <Route path="/myprofile"/>
     </Switch>
   )
 }
