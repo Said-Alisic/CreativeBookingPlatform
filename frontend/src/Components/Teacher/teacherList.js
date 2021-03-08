@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getTeachers } from '../../api/teacherApi'
 
-export function TeacherList(props) {
+export function TeacherList() {
 
     const [teachers, setTeachers] = useState([])
 
