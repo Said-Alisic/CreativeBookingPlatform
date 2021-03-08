@@ -8,7 +8,7 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { BrowserRouter, Link } from 'react-router-dom';
-import { RouteSwitch } from './RouteSwitch';
+import  RouteSwitch  from './RouteSwitch';
 
 
 const useStyles = makeStyles({
@@ -48,7 +48,7 @@ export function LeftSideDrawer() {
     >
       <List>
         {['Classes', 'Teachers', 'Students', 'Bookings'].map((text) => (
-          <ListItem button key={text} component={Link} to={"/" + text.toLowerCase()}>
+          <ListItem  key={text} component={Link} to={"/" + text.toLowerCase()}>
             <ListItemText primary={text} />
           </ListItem>
         ))}
@@ -56,15 +56,11 @@ export function LeftSideDrawer() {
       <Divider/>
       <List>
         {['My Profile', 'My Classes', 'My Bookings', 'Tickets'].map((text, index) => (     
-          <ListItem button key={text} component={Link} to={"/" + text.toLowerCase()}> 
+          <ListItem  key={text} component={Link} to={"/" + text.toLowerCase()}> 
           
             <ListItemText primary={text}/>
           </ListItem>
         ))}
-      </List>
-      <List>
-        
-        
       </List>
       
       

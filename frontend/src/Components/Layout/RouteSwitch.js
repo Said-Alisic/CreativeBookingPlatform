@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { TeacherList } from './Teacher/teacherList';
+import { TeacherList } from '../Teacher/teacherList';
 
-export function RouteSwitch() {
+function RouteSwitch() {
 
   return (
     <Switch>
@@ -17,3 +17,5 @@ export function RouteSwitch() {
     </Switch>
   )
 }
+
+export default RouteSwitch;

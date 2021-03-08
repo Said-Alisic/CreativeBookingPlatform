@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { LeftSideDrawer } from './Components/LeftSideDrawer';
-import { Container } from './Components/Container'
+import { LeftSideDrawer } from './Components/Layout/LeftSideDrawer';
+import NavBar from './Components/Layout/NavBar';
+
 
 
 class App extends Component {
@@ -8,18 +9,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Container>
-          <LeftSideDrawer/>
- 
-
-
-            <main className="main-content">
-            
-              
-            </main>
-        </Container>
-        
-      </div>
+        <NavBar/>
+        <LeftSideDrawer/>
+    </div>
     );
   }
   
