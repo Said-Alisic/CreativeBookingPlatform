@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import { LeftSideDrawer } from './Components/Layout/LeftSideDrawer';
 import NavBar from './Components/Layout/NavBar';
+import ResponsiveDrawer from './Components/Layout/TestDrawer';
 
-
+//<NavBar/>
 
 class App extends Component {
 
   render() {
     return (
       <div className="App">
-        <NavBar/>
-        <LeftSideDrawer/>
+        
+        <ResponsiveDrawer/>
+        
     </div>
     );
   }
