@@ -8,8 +8,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <main className='main-content'>
+          <SideDrawer/>
+        </main>
         
-        <SideDrawer/>
         
     </div>
     );

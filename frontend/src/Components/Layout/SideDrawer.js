@@ -25,12 +25,15 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up("sm")]: {
       width: drawerWidth,
       flexShrink: 0
+      
     }
   },
   appBar: {
-    marginLeft: drawerWidth,
+    
     [theme.breakpoints.up("sm")]: {
-      width: `calc(100% - ${drawerWidth}px)`
+      position: 'flex',
+      width: '100%',
+      zIndex: theme.zIndex.drawer + 1,
     }
   },
   menuButton: {
@@ -41,7 +44,9 @@ const useStyles = makeStyles(theme => ({
   },
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
-    width: drawerWidth
+    width: drawerWidth,
+    //padding: theme.spacing(7), // This 'kinda' solves the problem of appbar covering drawer but...yeah...
+    paddingTop: 64  // equal to AppBar height (on desktop)
   },
   content: {
     flexGrow: 10,
@@ -70,19 +75,16 @@ function SideDrawer() {
 
   const drawer = (
     <div>
-
       <List>
         {drawerOptions.map((text, index) => (
           <ListItem key={text} component={Link} to={"/" + text.toLowerCase()}>
-            <ListItemText key={text} primary={text} />
-            
+            <ListItemText key={text} primary={text} />       
           </ListItem>     
         ))}
         <Divider/>
       </List>
     </div>
   );
-
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -131,13 +133,10 @@ function SideDrawer() {
             </Drawer>
           </Hidden>
         </nav>
-
-        <main className={classes.content}>
-          <div className={classes.toolbar} />
-
-          <RouteSwitch/>
-
-        </main>
+          <main className={classes.content}>
+            <div className={classes.toolbar}/>
+            <RouteSwitch/>
+          </main>
       </BrowserRouter>
     </div>
   );
