@@ -7,7 +7,9 @@ import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import { Switch, BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Link } from 'react-router-dom';
+import { RouteSwitch } from './RouteSwitch';
+
 
 const useStyles = makeStyles({
   list: {
@@ -18,7 +20,7 @@ const useStyles = makeStyles({
   },
 });
 
-export function LeftSideDrawer(props) {
+export function LeftSideDrawer() {
   const classes = useStyles();
   const [state, setState] = React.useState({
     top: false,
@@ -78,11 +80,7 @@ export function LeftSideDrawer(props) {
               {list('left')}
             </Drawer>
           </React.Fragment>
-          <Switch>
-            <Route exact path="/" render={() => props.teacherList} />
-            <Route path="/teachers" exact component={props.teacherList} />
-            <Route path="/students" render={() => <div>Page starred</div>} />
-          </Switch>
+          <RouteSwitch/>
         </BrowserRouter>
     </div>
   );
