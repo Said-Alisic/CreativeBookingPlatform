@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { TeacherTable } from '../Teacher/TeacherTable';
 
+// Defines our routes to our different page components
 function RouteSwitch() {
 
   return (

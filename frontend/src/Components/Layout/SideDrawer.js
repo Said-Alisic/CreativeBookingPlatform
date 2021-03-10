@@ -54,6 +54,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+// Our side drawer that holds the links to our routes and includes a navbar (navbar may be transferred elsewhere later)
 function SideDrawer() {
   const classes = useStyles();
   const theme = useTheme();
@@ -98,7 +99,7 @@ function SideDrawer() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Responsive SideDrawer
+            Creative Bookings
           </Typography>
         </Toolbar>
       </AppBar>

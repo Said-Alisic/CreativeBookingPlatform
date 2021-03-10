@@ -12,6 +12,7 @@ const useStyles = makeStyles({
   },
 });
 
+// Keeps table style, size, and more consistencies across all tables where implemented - no other special functionalities
 const Table = (props) => {
   const classes = useStyles();
 

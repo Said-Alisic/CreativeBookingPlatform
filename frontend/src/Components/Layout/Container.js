@@ -18,6 +18,7 @@ import { makeStyles } from '@material-ui/core/styles';
   }
 }));
 
+// Container for keeping page style constitency where implemented - no other major functionalities
 const Container = (props) => {
 
   const { container, flexCenter } = useStyles();
