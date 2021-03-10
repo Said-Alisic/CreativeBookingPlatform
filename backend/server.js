@@ -13,12 +13,16 @@ server.use(bodyparser.urlencoded({ extended: true }));
 server.use(bodyparser.json());
 
 // Start server
-server.listen(config.PORT, () => {
+server.listen(config.PORT, (err) => {
+    if (err) throw err;
     console.log(`Node.js server is listening for requests at port: ${config.PORT}`);
+    
 });
 
-server.get('/', (req, res) => {
-    res.send('Our API server is running.')
+server.get('/', (req, res, err) => {
+    if (err) throw err;
+    res.send('Our API server is running.');
+    
 
 });
 
