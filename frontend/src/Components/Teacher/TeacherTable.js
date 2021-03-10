@@ -8,23 +8,23 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
 
-export function TeacherTable() {
+function TeacherTable() {
 
     const [teachers, setTeachers] = useState([])
 
     useEffect(() => {
         getTeachers()
-          .then(res => setTeachers(res.data));
+          .then(res => setTeachers(res.data))
+          .catch((err) => console.log(`Error occured at teacher api: ${err}`));
       }, [])
-
-      
+    
     return (
         <Container>
             <Table>
                 <TableHead>
                     <TableRow>
                         <TableCell align="center">Profile Display Name</TableCell>
-                        <TableCell align="right"> Name</TableCell>
+                        <TableCell align="center"> Name</TableCell>
                         <TableCell align="right">Email</TableCell>
                         <TableCell align="right">Phone Number</TableCell>
                         <TableCell align="right">Address</TableCell>
@@ -33,10 +33,8 @@ export function TeacherTable() {
                 <TableBody>
                 {teachers.map((item, index) => (
                     <TableRow key={index}>
-                        <TableCell component="th" scope="row" align="center">
-                            {item.display_name}
-                        </TableCell>
-                        <TableCell align="right">{item.first_name} {item.last_name}</TableCell>
+                        <TableCell component="th" scope="row" align="center">{item.display_name}</TableCell>
+                        <TableCell align="center">{item.first_name} {item.last_name}</TableCell>
                         <TableCell align="right">{item.email}</TableCell>
                         <TableCell align="right">{item.phone_number}</TableCell>
                         <TableCell align="right">{item.address}</TableCell>
@@ -46,10 +44,7 @@ export function TeacherTable() {
             </Table>
         </Container>
     )
-
-
 }
 
-
-
+export default TeacherTable;
 
