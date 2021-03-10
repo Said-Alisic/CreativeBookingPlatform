@@ -5,6 +5,7 @@ import StudentTable from '../Student/StudentTable';
 import TransactionTable from '../Transaction/TransactionTable';
 import BookingTable from '../Booking/BookingTable';
 import ClassTable from '../Class/ClassTable';
+import TimeSlotTable from '../TimeSlot/TimeSlotTable';
 
 // Defines our routes to our different page components
 function RouteSwitch() {
@@ -17,7 +18,7 @@ function RouteSwitch() {
       <Route path="/classes" exact component={ClassTable}/>
       <Route path="/bookings" exact component={BookingTable}/>
       <Route path="/transactions" exact component={TransactionTable}/>
-      <Route path="/timeSlots" exact component={TransactionTable}/>
+      <Route path="/timeSlots" exact component={TimeSlotTable}/>
       <Route path="/mybookings"/>
       <Route path="/myclasses"/>
       <Route path="/myprofile"/>
