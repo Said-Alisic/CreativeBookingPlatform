@@ -15,7 +15,7 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Link, BrowserRouter } from "react-router-dom";
 import RouteSwitch  from './RouteSwitch';
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 const useStyles = makeStyles(theme => ({
   root: {
