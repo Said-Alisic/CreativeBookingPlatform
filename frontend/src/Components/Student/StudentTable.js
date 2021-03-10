@@ -14,7 +14,8 @@ function StudentTable() {
 
     useEffect(() => {
         getStudents()
-          .then(res => setTeachers(res.data));
+          .then(res => setTeachers(res.data))
+          .catch((err) => console.log(`Error occured at student api: ${err}`));
       }, [])
 
     return (
@@ -22,7 +23,7 @@ function StudentTable() {
             <Table>
                 <TableHead>
                     <TableRow>
-                        <TableCell align="Center">Name</TableCell>
+                        <TableCell align="center">Name</TableCell>
                         <TableCell align="right">Email</TableCell>
                         <TableCell align="right">Date Joined</TableCell>
                         <TableCell align="right">Tickets</TableCell>

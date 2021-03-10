@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { TeacherTable } from '../Teacher/TeacherTable';
-import { StudentTable } from '../Student/StudentTable';
+import TeacherTable from '../Teacher/TeacherTable';
+import StudentTable from '../Student/StudentTable';
 
 // Defines our routes to our different page components
 function RouteSwitch() {

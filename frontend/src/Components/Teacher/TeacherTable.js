@@ -14,7 +14,8 @@ function TeacherTable() {
 
     useEffect(() => {
         getTeachers()
-          .then(res => setTeachers(res.data));
+          .then(res => setTeachers(res.data))
+          .catch((err) => console.log(`Error occured at teacher api: ${err}`));
       }, [])
     
     return (
@@ -45,5 +46,5 @@ function TeacherTable() {
     )
 }
 
-export default StudentTable;
+export default TeacherTable;
 
