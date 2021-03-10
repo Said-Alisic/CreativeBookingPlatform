@@ -1,13 +1,13 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { TeacherList } from '../Teacher/teacherList';
+import { TeacherTable } from '../Teacher/TeacherTable';
 
 function RouteSwitch() {
 
   return (
     <Switch>
       <Route exact path="/"/>
-      <Route path="/teachers" exact component={TeacherList}/>
+      <Route path="/teachers" exact component={TeacherTable}/>
       <Route path="/students"/>
       <Route path="/classes"/>
       <Route path="/bookings"/>

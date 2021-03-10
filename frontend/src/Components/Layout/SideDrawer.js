@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
-    //padding: theme.spacing(7), // This 'kinda' solves the problem of appbar covering drawer but...yeah...
+    //padding: theme.spacing(7), // This 'kinda' solves the problem of appbar covering drawer but...not quite...yeah...
     paddingTop: 64  // equal to AppBar height (on desktop)
   },
   content: {
