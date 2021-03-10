@@ -10,11 +10,11 @@ import TableRow from '@material-ui/core/TableRow';
 
 function StudentTable() {
 
-    const [students, setTeachers] = useState([])
+    const [students, setStudents] = useState([])
 
     useEffect(() => {
         getStudents()
-          .then(res => setTeachers(res.data))
+          .then(res => setStudents(res.data))
           .catch((err) => console.log(`Error occured at student api: ${err}`));
       }, [])
 

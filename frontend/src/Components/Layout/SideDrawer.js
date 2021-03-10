@@ -69,6 +69,7 @@ function SideDrawer() {
     'Teachers', 
     'Students', 
     'Bookings', 
+    'Transactions',
     'My Profile', 
     'My Classes', 
     'My Bookings', 
